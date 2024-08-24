@@ -29,15 +29,18 @@ const Apod = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://api.nasa.gov/planetary/apod', {
-          params: {
-            api_key: token,
-            count: 20
-          },
-        });
+        const response = await axios.get(
+          "https://api.nasa.gov/planetary/apod",
+          {
+            params: {
+              api_key: token,
+              count: 20,
+            },
+          }
+        );
         setImages(response.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
       }
     };
     fetchData();
@@ -47,30 +50,36 @@ const Apod = () => {
 
   return (
     <div>
-      
       <motion.section
         style={{
           backgroundImage,
         }}
-        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
+        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200 font-fira"
       >
-        <p className="items-center justify-center font-fira font-semibold text-[#FFFFC5] text-center text-3xl underline hover:underline-offset-8 transition-300">Astronomy Photo Gallery</p>
+        <p className="items-center justify-center font-fira font-semibold text-[#FFFFC5] text-center text-3xl ">
+          Astronomy Photo Gallery
+        </p>
 
         <div className="relative z-10 flex flex-col items-center py-[100px]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
             {images.map((item, index) => (
               <div key={index} className=" flex flex-col items-center">
                 <div className="max-w-full h-auto rounded-[70px] w-[300px]">
-                <div class="group relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-xl hover:shadow-[#FFFFC5]">
-                  <img src={item.url} className="rounded-[100px] w-[500px] h-[400px] object-cover transition-transform duration-500 group-hover:rotate-3  "/>
-                  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                  <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                <p className="text-center text-[#FFD700] mb-9 ">{item.title}</p>
-                <p class="mb-3 text-sm h-[100px] italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {item.explanation}
-                </p>
-                </div>
-                </div>
+                  <div class="group relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-xl hover:shadow-[#FFFFC5]">
+                    <img
+                      src={item.url}
+                      className="rounded-[100px] w-[500px] h-[400px] object-cover transition-transform duration-500 group-hover:rotate-3  "
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+                    <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                      <p className="text-center text-[#FFD700] mb-9 ">
+                        {item.title}
+                      </p>
+                      <p class="mb-3 text-sm h-[100px] italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        {item.explanation}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
