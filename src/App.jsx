@@ -1,13 +1,17 @@
 import { useState } from "react";
-
-import { AuroraHero } from "./assets/components/AuroraHero";
-
+import { Route, Routes } from "react-router-dom";
+import {LandingPage}  from "./assets/components/LandingPage";
+import Apod from "./assets/components/Apod";
+import PicOfTheDay from "./assets/components/PicOfTheDay";
 function App() {
   const [count, setCount] = useState(0);
-
   return (
     <>
-      <div><AuroraHero/></div>
+        <Routes>
+            <Route path="/" element={<LandingPage/>} />
+            <Route path="/apod" element={<Apod/>} />
+            <Route path="/pic" element={<PicOfTheDay/>}></Route>
+        </Routes>
     </>
   );
 }
