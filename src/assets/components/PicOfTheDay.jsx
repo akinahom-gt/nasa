@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { ArrowLeft } from "lucide-react";
 import {
   useMotionTemplate,
   useMotionValue,
   motion,
   animate,
 } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const COLORS_TOP = ["#0032A0"];
 
@@ -49,6 +51,10 @@ const PicOfTheDay = () => {
 
   return (
     <div>
+      <div className="bg-[#020617] text-white p-6">
+       <Link to='/'><ArrowLeft size={30}/></Link> 
+      </div>
+
       <motion.section
         style={{
           backgroundImage,
