@@ -4,6 +4,8 @@ import { LandingPage } from "./assets/components/LandingPage";
 import Apod from "./assets/components/Apod";
 import PicOfTheDay from "./assets/components/PicOfTheDay";
 import Details from "./assets/components/Details";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [count, setCount] = useState(0);
   return (

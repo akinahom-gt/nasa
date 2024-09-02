@@ -10,7 +10,8 @@ import {
   animate,
 } from "framer-motion";
 import axios from "axios";
-
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const COLORS_TOP = ["#0032A0", "#D92906"];
 export const LandingPage = () => {
   const color = useMotionValue(COLORS_TOP[0]);
@@ -25,7 +26,7 @@ export const LandingPage = () => {
   }, []);
 
   const [image, setImage] = useState(null);
-  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedDate, setSelectedDate] = useState(" ");
   const token = "nmVhcxoNKubuL01m3t3Q8oW70fD04OBoke94AfaT";
 
   const fetchData = async (date) => {
@@ -39,6 +40,8 @@ export const LandingPage = () => {
       setImage(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
+      toast.error("Date must be between Jun 16, 1995 and Sep 02, 2024.", {
+      });
     }
   };
 
