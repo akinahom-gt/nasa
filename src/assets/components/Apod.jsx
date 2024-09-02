@@ -3,6 +3,7 @@ import axios from "axios";
 import { Stars } from "@react-three/drei";
 import { ArrowLeft } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
+import PropagateLoader from "react-spinners/PropagateLoader"
 import {
   useMotionTemplate,
   useMotionValue,
@@ -16,6 +17,8 @@ const COLORS_TOP = ["#0032A0"];
 const Apod = () => {
   const [images, setImages] = useState([]);
   const color = useMotionValue(COLORS_TOP[0]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     animate(color, COLORS_TOP, {
@@ -29,6 +32,7 @@ const Apod = () => {
   const token = "nmVhcxoNKubuL01m3t3Q8oW70fD04OBoke94AfaT";
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchData = async () => {
       try {
         const response = await axios.get(
@@ -41,6 +45,7 @@ const Apod = () => {
           }
         );
         setImages(response.data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -63,29 +68,28 @@ const Apod = () => {
         }}
         className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200 font-fira"
       >
-        <p className="items-center justify-center font-fira font-semibold text-[#FFFFC5] text-center text-3xl ">
+        <p className="items-center justify-center uppercase font-fira font-semibold text-center text-4xl ">
           Astronomy Photo Gallery
         </p>
+        {isLoading ? <div className="flex  items-center justify-center " >
+          <PropagateLoader color="#ffffff" /></div>: null}
 
         <div className="relative z-10 flex flex-col items-center py-[100px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 group gap-12">
             {images.map((item, index) => (
               <div key={index} className=" flex flex-col items-center">
                 <div className="max-w-full h-auto rounded-[70px] w-[300px]">
-                  <div class="group relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-xl hover:shadow-[#FFFFC5]">
+                  <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-lg hover:shadow-red-200">
+                  <Link to={`/image/${item.date}`}>
                     <img
                       src={item.url}
-                      className="rounded-[100px] w-[500px] h-[400px] object-cover transition-transform duration-500 group-hover:rotate-3  "
+                      className="rounded-[100px] w-[500px] h-[400px] object-cover transition-transform duration-500 "
                     />
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
-                    <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
-                      <p className="text-center text-[#FFD700] mb-9 ">
+                    <div class="absolute inset-0 "></div>
+                      <p className="text-center text-white mb-9 py-3 w-[300px]">
                         {item.title}
                       </p>
-                      <p class="mb-3 text-sm h-[100px] italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                        {item.explanation}
-                      </p>
-                    </div>
+                      </Link>
                   </div>
                 </div>
               </div>
@@ -97,7 +101,7 @@ const Apod = () => {
         </div>
         <div className="absolute inset-0 z-0">
           <Canvas>
-            <Stars radius={50} count={3000} factor={3} fade speed={1} />
+            <Stars radius={50} count={3000} factor={4} fade speed={3} />
           </Canvas>
         </div>
       </motion.section>
