@@ -70,16 +70,17 @@ const PicOfTheDay = () => {
             <p className="font-fira font-semibold text-2xl">{data.date}</p>
             <p className="font-fira font-semibold text-3xl">{data.title}</p>
             <div className=" h-[620px] rounded-[70px]">
-              <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-lg hover:shadow-red-200">
-                <img src={data.url} className="w-[720px] h-[620px] rounded-[90px] py-8" />
+              <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-md hover:shadow-red-200">
+                <img
+                  src={data.url}
+                  className="w-[720px] h-[620px] rounded-[90px] py-8"
+                />
               </div>
-           </div>
-           </div>
-          <div className="font-fira text-center text-2xl font-medium w-[650px] mt-[100px]">
+            </div>
+          </div>
+          <div className="font-fira text-center text-xl font-medium w-[650px] mt-[100px]">
             <p>{data.explanation}</p>
           </div>
-         
-        
         </div>
         <div className="absolute inset-0 z-0">
           {isLoading ? (

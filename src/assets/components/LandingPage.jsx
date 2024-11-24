@@ -10,8 +10,8 @@ import {
   animate,
 } from "framer-motion";
 import axios from "axios";
-import {toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const COLORS_TOP = ["#0032A0", "#D92906"];
 export const LandingPage = () => {
   const color = useMotionValue(COLORS_TOP[0]);
@@ -40,8 +40,7 @@ export const LandingPage = () => {
       setImage(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
-      toast.error("Date must be between Jun 16, 1995 and Sep 02, 2024.", {
-      });
+      toast.error("Date must be between Jun 16, 1995 and today.", {});
     }
   };
 
@@ -78,7 +77,6 @@ export const LandingPage = () => {
             </div>
             <div></div>
             <motion.button
-              
               onClick={handleSearch}
               className="border w-[30px] h-[30px] hover:border-white border-gray-600 rounded-full px-1"
             >
@@ -102,7 +100,7 @@ export const LandingPage = () => {
                   style={{
                     border,
                   }}
-                  className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 transition-colors bg-gray-300/20 text-white"
                 >
                   Astronomy Picture Of The Day{" "}
                   <ArrowUpRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
@@ -115,7 +113,7 @@ export const LandingPage = () => {
                   style={{
                     border,
                   }}
-                  className="group relative flex w-fit items-center gap-1.5 rounded-full bg-gray-950/10 px-4 py-2 text-gray-50 transition-colors hover:bg-gray-950/50"
+                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-gray-50 transition-colors bg-gray-300/20 text-white"
                 >
                   Gallery
                   <ArrowUpRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />

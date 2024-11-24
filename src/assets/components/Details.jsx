@@ -6,12 +6,12 @@ import { ArrowLeft } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
 import {
-    useMotionTemplate,
-    useMotionValue,
-    motion,
-    animate,
-  } from "framer-motion";
-  const COLORS_TOP = ["#0032A0"];
+  useMotionTemplate,
+  useMotionValue,
+  motion,
+  animate,
+} from "framer-motion";
+const COLORS_TOP = ["#0032A0"];
 
 const Details = () => {
   const { date } = useParams();
@@ -50,15 +50,14 @@ const Details = () => {
     fetchImageByDate();
   }, [date, token]);
 
-  
   const backgroundImage = useMotionTemplate`radial-gradient(125% 125% at 50% 27%, #020617 50%, ${color})`;
 
   return (
     <div>
       <div className="bg-[#020617] text-white p-6">
-      <Link to="/" >
-        <ArrowLeft size={30} />
-      </Link>
+        <Link to="/">
+          <ArrowLeft size={30} />
+        </Link>
       </div>
       <motion.section
         style={{
@@ -66,45 +65,44 @@ const Details = () => {
         }}
         className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 font-fira"
       >
-         {imageData && (
-        <div className="relative z-10 flex items-center justify-center group gap-[180px] ">
-          <div className="flex flex-col gap-4">
-            <p className="font-fira font-semibold text-2xl">{imageData.date}</p>
-            <p className="font-fira font-semibold text-3xl">
-              {imageData.title}
-            </p>
-            <div className=" h-[620px] rounded-[70px]">
-              <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-lg hover:shadow-red-200">
-                <img
-                  src={imageData.url}
-                  className="w-[720px] h-[600px] rounded-[90px] py-8"
-                />
+        {imageData && (
+          <div className="relative z-10 flex items-center justify-center group gap-[180px] ">
+            <div className="flex flex-col gap-4">
+              <p className="font-fira font-semibold text-2xl">
+                {imageData.date}
+              </p>
+              <p className="font-fira font-semibold text-3xl">
+                {imageData.title}
+              </p>
+              <div className=" h-[620px] rounded-[70px]">
+                <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-md hover:shadow-red-200">
+                  <img
+                    src={imageData.url}
+                    className="w-[720px] h-[600px] rounded-[90px] py-8"
+                  />
+                </div>
               </div>
             </div>
+            <div className="font-fira text-center text-xl font-medium w-[650px] mt-[100px]">
+              <p>{imageData.explanation}</p>
+            </div>
           </div>
-          <div className="font-fira text-center text-2xl font-medium w-[650px] mt-[100px]">
-            <p>{imageData.explanation}</p>
-          </div>
-        </div>
-      )}
-    
-      
-      <div className="absolute inset-0 z-0">
-        {isLoading ? (
-          <div className="flex  items-center justify-center h-screen ">
-            <PropagateLoader color="#ffffff" />
-          </div>
-        ) : null}
+        )}
+
+        <div className="absolute inset-0 z-0">
+          {isLoading ? (
+            <div className="flex  items-center justify-center h-screen ">
+              <PropagateLoader color="#ffffff" />
+            </div>
+          ) : null}
         </div>
         <div className="absolute inset-0 z-0">
           <Canvas>
             <Stars radius={50} count={3000} factor={4} fade speed={4} />
           </Canvas>
         </div>
-        </motion.section>
-     
-    
-     </div>
+      </motion.section>
+    </div>
   );
 };
 
