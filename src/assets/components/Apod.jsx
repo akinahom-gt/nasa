@@ -3,7 +3,7 @@ import axios from "axios";
 import { Stars } from "@react-three/drei";
 import { ArrowLeft } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
-import PropagateLoader from "react-spinners/PropagateLoader";
+import SyncLoader from "react-spinners/SyncLoader";
 import {
   useMotionTemplate,
   useMotionValue,
@@ -73,7 +73,7 @@ const Apod = () => {
         </p>
         {isLoading ? (
           <div className="flex  items-center justify-center ">
-            <PropagateLoader color="#ffffff" />
+            <SyncLoader color="#ffffff" />
           </div>
         ) : null}
 

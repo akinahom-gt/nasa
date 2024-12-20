@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import PropagateLoader from "react-spinners/PropagateLoader";
+import SyncLoader from "react-spinners/SyncLoader";
 import { ArrowLeft } from "lucide-react";
 import { Canvas } from "@react-three/fiber";
 import { Stars } from "@react-three/drei";
@@ -63,27 +63,27 @@ const Details = () => {
         style={{
           backgroundImage,
         }}
-        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 font-fira"
+        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 font-fira px-8"
       >
         {imageData && (
-          <div className="relative z-10 flex items-center justify-center group gap-[180px] ">
+          <div className="relative z-10 lg:flex items-center justify-center group gap-[180px] ">
             <div className="flex flex-col gap-4">
-              <p className="font-fira font-semibold text-2xl">
+              <p className="font-fira font-semibold text-xl">
                 {imageData.date}
               </p>
-              <p className="font-fira font-semibold text-3xl">
+              <p className="font-fira font-semibold text-2xl">
                 {imageData.title}
               </p>
-              <div className=" h-[620px] rounded-[70px]">
+              <div className=" lg:h-[620px] rounded-[70px]">
                 <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-md hover:shadow-red-200">
                   <img
                     src={imageData.url}
-                    className="w-[720px] h-[600px] rounded-[90px] py-8"
+                    className="lg:w-[720px] lg:h-[600px] rounded-[90px] py-8"
                   />
                 </div>
               </div>
             </div>
-            <div className="font-fira text-center text-xl font-medium w-[650px] mt-[100px]">
+            <div className="font-fira text-center text-[18px] font-medium lg:w-[650px] mt-[100px]">
               <p>{imageData.explanation}</p>
             </div>
           </div>
@@ -92,7 +92,7 @@ const Details = () => {
         <div className="absolute inset-0 z-0">
           {isLoading ? (
             <div className="flex  items-center justify-center h-screen ">
-              <PropagateLoader color="#ffffff" />
+              <SyncLoader color="#ffffff" />
             </div>
           ) : null}
         </div>
