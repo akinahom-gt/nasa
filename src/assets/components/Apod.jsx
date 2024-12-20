@@ -66,9 +66,9 @@ const Apod = () => {
         style={{
           backgroundImage,
         }}
-        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200 font-fira"
+        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200 font-fira px-7"
       >
-        <p className="items-center justify-center uppercase font-fira font-semibold text-center text-4xl ">
+        <p className="items-center justify-center uppercase font-fira font-semibold text-center text-2xl md:text-4xl ">
           Astronomy Photo Gallery
         </p>
         {isLoading ? (

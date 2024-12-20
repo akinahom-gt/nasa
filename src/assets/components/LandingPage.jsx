@@ -62,10 +62,10 @@ export const LandingPage = () => {
         style={{
           backgroundImage,
         }}
-        className="relative grid place-content-center min-h-screen overflow-hidden bg-gray-950 px-4 py-24 text-gray-200"
+        className="relative grid place-content-center min-h-screen overflow-hidden bg-gray-950 py-24 text-gray-200"
       >
-        <div className="relative z-10 flex flex-col items-center">
-          <div className="flex gap-9">
+        <div className="relative z-10 flex flex-col items-center px-8 lg:px-4 ">
+          <div className="flex gap-4 lg:gap-9">
             <div>
               <input
                 type="date"
@@ -86,14 +86,14 @@ export const LandingPage = () => {
           <h1 className="max-w-3xl font-fira font-semibold bg-gradient-to-br from-white to-gray-400 bg-clip-text text-center text-3xl font-medium leading-tight text-transparent sm:text-5xl sm:leading-tight md:text-7xl md:leading-tight py-4">
             Explore Space with NASA Images{" "}
           </h1>
-          <p className="my-6 max-w-xl text-center text-base leading-relaxed md:text-lg md:leading-relaxed">
+          <p className="my-6 max-w-xl text-center text-base leading-relaxed text-sm md:text-lg md:leading-relaxed">
             Journey through the cosmos with stunning images from NASA.
             <p>
               Discover captivating visuals that reveal the wonders of the
               universe and inspire curiosity about the world beyond our own.
             </p>
           </p>
-          <div className="flex gap-10 ">
+          <div className="flex gap-10">
             <div>
               <Link to="/pic">
                 <motion.button
@@ -125,8 +125,8 @@ export const LandingPage = () => {
           {image && (
             <div className="relative z-10 lg:flex items-center justify-center gap-[150px] py-[190px] px-8">
               <div className="flex flex-col gap-3">
-                <p className="font-fira font-semibold text-xl">{image.date}</p>
-                <p className="font-fira font-semibold text-2xl">
+                <p className="font-fira font-semibold text-lg lg:text-xl">{image.date}</p>
+                <p className="font-fira font-semibold text-xl lg:text-2xl">
                   {image.title}
                 </p>
                 <img
@@ -134,7 +134,7 @@ export const LandingPage = () => {
                   className="h-[430px] lg:w-[400px] lg:h-[400px] py-8 rounded-[80px] transition-shadow hover:shadow-sm hover:shadow-red-200"
                 />
               </div>
-              <div className="font-fira text-center text-[16px] font-medium lg:w-[650px] ">
+              <div className="font-fira text-center text-[14px] lg:text-[16px] font-medium lg:w-[650px] ">
                 <p>{image.explanation}</p>
               </div>
             </div>

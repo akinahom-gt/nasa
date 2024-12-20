@@ -67,18 +67,18 @@ const PicOfTheDay = () => {
       >
         <div className="relative z-10 lg:flex items-center justify-center group gap-[180px] px-8 ">
           <div className="flex flex-col gap-8">
-            <p className="font-fira font-semibold text-xl">{data.date}</p>
-            <p className="font-fira font-semibold text-2xl">{data.title}</p>
-            <div className=" lg:h-[620px] rounded-[70px]">
+            <p className="font-fira font-semibold text-lg lg:text-xl">{data.date}</p>
+            <p className="font-fira font-semibold text-xl md:text-2xl">{data.title}</p>
+            <div className="lg:h-[620px] rounded-[70px]">
               <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-md hover:shadow-red-200">
                 <img
                   src={data.url}
-                  className="lg:w-[720px] lg:h-[600px] rounded-[90px] py-8"
+                  className="sm:w-[720px] sm:h-[600px] h-[500px] rounded-[90px] py-8"
                 />
               </div>
             </div>
           </div>
-          <div className="font-fira text-center text-[18px] font-medium lg:w-[650px] mt-[100px]">
+          <div className="font-fira text-center text-[14px] md:text-[18px] font-medium lg:w-[650px] mt-[100px]">
             <p>{data.explanation}</p>
           </div>
         </div>
