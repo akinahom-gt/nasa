@@ -65,7 +65,7 @@ const PicOfTheDay = () => {
         }}
         className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-300"
       >
-        <div className="relative z-10 lg:flex items-center justify-center group gap-[180px] px-8 ">
+        <div className="relative z-10 lg:flex items-center justify-center group gap-[180px] px-2 ">
           <div className="flex flex-col gap-8">
             <p className="font-fira font-semibold text-lg lg:text-xl">{data.date}</p>
             <p className="font-fira font-semibold text-xl md:text-2xl">{data.title}</p>
@@ -78,7 +78,7 @@ const PicOfTheDay = () => {
               </div>
             </div>
           </div>
-          <div className="font-fira text-center text-[14px] md:text-[18px] font-medium lg:w-[650px] mt-[100px]">
+          <div className="font-fira text-center text-[14px] md:text-[18px] font-medium lg:w-[650px] lg:mt-[100px]">
             <p>{data.explanation}</p>
           </div>
         </div>

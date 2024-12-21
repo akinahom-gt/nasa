@@ -63,7 +63,7 @@ const Details = () => {
         style={{
           backgroundImage,
         }}
-        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 font-fira px-8"
+        className="relative grid min-h-screen overflow-hidden bg-gray-950 px-4 text-gray-200 font-fira px-5"
       >
         {imageData && (
           <div className="relative z-10 lg:flex items-center justify-center group gap-[180px] ">
@@ -83,7 +83,7 @@ const Details = () => {
                 </div>
               </div>
             </div>
-            <div className="font-fira text-center text-[14px] sm:text-[18px] font-medium lg:w-[650px] mt-[100px]">
+            <div className="font-fira text-center text-[14px] sm:text-[18px] font-medium lg:w-[650px] lg:mt-[100px]">
               <p>{imageData.explanation}</p>
             </div>
           </div>

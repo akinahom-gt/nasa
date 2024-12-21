@@ -77,16 +77,16 @@ const Apod = () => {
           </div>
         ) : null}
 
-        <div className="relative z-10 flex flex-col items-center py-[100px]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 group gap-12">
+        <div className="relative z-10 flex flex-col items-center py-[50px] sm:py-[80px]">
+          <div className="grid grid-col sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 group sm:gap-12">
             {images.map((item, index) => (
               <div key={index} className=" flex flex-col items-center">
-                <div className="max-w-full h-auto rounded-[70px] w-[300px]">
-                  <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-lg hover:shadow-red-200">
+                <div className="max-w-full h-auto rounded-[70px] sm:w-[300px]">
+                  <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.85] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[50px] transition-shadow hover:shadow-lg hover:shadow-red-200">
                     <Link to={`/image/${item.date}`}>
                       <img
                         src={item.url}
-                        className="rounded-[100px] w-[500px] h-[400px] object-cover transition-transform duration-500 "
+                        className=" sm:w-[500px] h-[400px] object-cover transition-transform duration-500 "
                       />
                       <div class="absolute inset-0 "></div>
                       <p className="text-center text-white mb-9 py-3 w-[300px]">

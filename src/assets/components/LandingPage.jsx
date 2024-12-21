@@ -100,7 +100,7 @@ export const LandingPage = () => {
                   style={{
                     border,
                   }}
-                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 transition-colors bg-gray-300/20 text-white"
+                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 transition-colors bg-gray-300/20 text-white text-[15px] lg:text-[18px]"
                 >
                   APOD
                   <ArrowUpRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
@@ -113,7 +113,7 @@ export const LandingPage = () => {
                   style={{
                     border,
                   }}
-                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-gray-50 transition-colors bg-gray-300/20 text-white"
+                  className="group relative flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-gray-50 transition-colors bg-gray-300/20 text-white text-[16px] lg:text-[18px]"
                 >
                   Gallery
                   <ArrowUpRight className="transition-transform group-hover:-rotate-45 group-active:-rotate-12" />
@@ -123,7 +123,7 @@ export const LandingPage = () => {
           </div>
 
           {image && (
-            <div className="relative z-10 lg:flex items-center justify-center gap-[150px] py-[190px] px-8">
+            <div className="relative z-10 lg:flex items-center justify-center gap-[150px] py-[190px] ">
               <div className="flex flex-col gap-3">
                 <p className="font-fira font-semibold text-lg lg:text-xl">{image.date}</p>
                 <p className="font-fira font-semibold text-xl lg:text-2xl">
