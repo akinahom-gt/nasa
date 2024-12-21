@@ -134,7 +134,7 @@ export const LandingPage = () => {
                   className="h-[430px] lg:w-[400px] lg:h-[400px] py-8 rounded-[80px] transition-shadow hover:shadow-sm hover:shadow-red-200"
                 />
               </div>
-              <div className="font-fira text-center text-[14px] lg:text-[16px] font-medium lg:w-[650px] ">
+              <div className="font-fira text-center text-[14px] lg:text-[16px] font-medium lg:w-[650px] mt-7">
                 <p>{image.explanation}</p>
               </div>
             </div>

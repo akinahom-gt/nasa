@@ -83,7 +83,7 @@ const Details = () => {
                 </div>
               </div>
             </div>
-            <div className="font-fira text-center text-[14px] sm:text-[18px] font-medium lg:w-[650px] lg:mt-[100px]">
+            <div className="font-fira text-center text-[14px] sm:text-[18px] font-medium lg:w-[650px] lg:mt-[100px] mt-7">
               <p>{imageData.explanation}</p>
             </div>
           </div>

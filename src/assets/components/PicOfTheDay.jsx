@@ -78,7 +78,7 @@ const PicOfTheDay = () => {
               </div>
             </div>
           </div>
-          <div className="font-fira text-center text-[14px] md:text-[18px] font-medium lg:w-[650px] lg:mt-[100px]">
+          <div className="font-fira text-center text-[14px] md:text-[18px] font-medium lg:w-[650px] mt-7 lg:mt-[100px]">
             <p>{data.explanation}</p>
           </div>
         </div>
