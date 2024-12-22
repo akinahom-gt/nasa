@@ -74,16 +74,16 @@ const Details = () => {
               <p className="font-fira font-semibold text-xl sm:text-2xl">
                 {imageData.title}
               </p>
-              <div className="sm:h-[620px] rounded-[70px]">
-                <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-[80px] transition-shadow hover:shadow-md hover:shadow-red-200">
+              <div className="sm:h-[620px] rounded-xl">
+                <div class="duration-500 transition-transform group-hover:blur-[0.5px] hover:!blur-none group-hover:scale-[0.97] hover:!scale-100 relative cursor-pointer items-center justify-center overflow-y-scroll overflow-x-hidden no-scrollbar rounded-lg transition-shadow hover:shadow-md hover:shadow-red-200">
                   <img
                     src={imageData.url}
-                    className="sm:w-[720px] sm:h-[600px] rounded-[90px] py-8"
+                    className="sm:w-[720px] sm:h-[600px] rounded-[40px]  py-8"
                   />
                 </div>
               </div>
             </div>
-            <div className="font-fira text-center text-[14px] sm:text-[18px] font-medium lg:w-[650px] lg:mt-[100px] mt-7">
+            <div className="font-fira text-[14px] sm:text-[18px] font-medium lg:w-[650px] lg:mt-[100px] mt-7 mb-10">
               <p>{imageData.explanation}</p>
             </div>
           </div>
